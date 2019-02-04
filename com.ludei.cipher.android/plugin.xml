@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="com.ludei.cipher.android" version="1.0.0">
+        
+    <name>Cocoon Cipher</name>
+    <description>Cocoon Cipher</description>
+    <license>Copyright Ludei</license>
+    <keywords>cordova, ludei, cocoon, development, canvas+, canvas plus, android</keywords>
+
+    <platform name="android">
+
+        <preference name="PASSWORD" />
+
+    	<hook type="after_prepare" src="hooks/after_prepare.js" />
+        <hook type="after_plugin_install" src="hooks/after_install.js" />
+        
+        <source-file src="src/CocoonCipher.java" target-dir="src/com/ludei/cipher/android" />
+        <source-file src="src/CocoonCipherClient.java" target-dir="src/com/ludei/cipher/android" />
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="CocoonCipher">
+                <param name="android-package" value="com.ludei.cipher.android.CocoonCipher" />
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+
+    </platform>
+</plugin>

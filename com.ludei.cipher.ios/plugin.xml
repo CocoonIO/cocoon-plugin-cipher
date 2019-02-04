@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="com.ludei.cipher.ios" version="1.0.0">
+        
+    <name>Cocoon Cipher</name>
+    <description>Cocoon Cipher</description>
+    <license>Copyright Ludei</license>
+    <keywords>cordova, ludei, cocoon, development, canvas+, canvas plus, ios</keywords>
+
+    <platform name="ios">
+
+        <preference name="PASSWORD" />
+
+    	<hook type="after_prepare" src="hooks/after_prepare.js" />
+        <hook type="after_plugin_install" src="hooks/after_install.js" />
+        
+        <header-file src="src/CocoonCipher.h" />
+        <source-file src="src/CocoonCipher.m" />
+
+        <config-file target="config.xml" parent="/*">
+            <feature name="CocoonCipherPlugin">
+                <param name="ios-package" value="CocoonCipherPlugin" />
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+
+    </platform>
+</plugin>
